@@ -15,38 +15,45 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#hero" class="logo">MB</a>
-      <nav class="nav" id="nav">
-        <a href="#services">Leistungen</a>
-        <a href="#about">Über mich</a>
-        <a href="#references">Beispiele</a>
-        <a href="#contact" class="nav-cta">Kontakt</a>
-      </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-right">
+        <div class="lang-switcher" role="group" aria-label="Sprache wählen / Language / Dil">
+          <button type="button" class="lang-btn active" data-lang="de" aria-pressed="true">DE</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false">TR</button>
+        </div>
+        <nav class="nav" id="nav">
+          <a href="#services" data-i18n="nav.services">Leistungen</a>
+          <a href="#about" data-i18n="nav.about">Über mich</a>
+          <a href="#references" data-i18n="nav.references">Beispiele</a>
+          <a href="#contact" class="nav-cta" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" data-i18n-aria="nav.toggleLabel" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
     <section id="hero" class="hero">
       <div class="container hero-inner">
-        <p class="eyebrow reveal" style="transition-delay:0ms">KI & Automatisierung für Unternehmen</p>
+        <p class="eyebrow reveal" style="transition-delay:0ms" data-i18n="hero.eyebrow">KI & Automatisierung für Unternehmen</p>
         <h1 class="reveal" style="transition-delay:80ms">Mustafa Bozdogan</h1>
-        <p class="tagline reveal" style="transition-delay:160ms">KI &amp; Prozessautomatisierung für Unternehmen</p>
-        <p class="hero-text reveal" style="transition-delay:240ms">
+        <p class="tagline reveal" style="transition-delay:160ms" data-i18n="hero.tagline">KI &amp; Prozessautomatisierung für Unternehmen</p>
+        <p class="hero-text reveal" style="transition-delay:240ms" data-i18n="hero.text">
           Ich helfe Unternehmen, wiederkehrende Aufgaben zu automatisieren und
           KI sinnvoll in bestehende Abläufe zu integrieren — weniger manuelle
           Arbeit, weniger Fehler, mehr Zeit für das Wesentliche.
         </p>
         <div class="hero-actions reveal" style="transition-delay:320ms">
-          <a href="#contact" class="btn btn-primary">Kostenloses Erstgespräch</a>
-          <a href="#services" class="btn btn-secondary">Leistungen ansehen</a>
+          <a href="#contact" class="btn btn-primary" data-i18n="common.ctaPrimary">Kostenloses Erstgespräch</a>
+          <a href="#services" class="btn btn-secondary" data-i18n="hero.ctaSecondary">Leistungen ansehen</a>
         </div>
       </div>
     </section>
 
     <div class="ticker">
-      <p class="ticker-label">Werkzeuge, mit denen ich arbeite</p>
+      <p class="ticker-label" data-i18n="ticker.label">Werkzeuge, mit denen ich arbeite</p>
       <div class="ticker-track">
         <div class="ticker-group">
           <span>n8n</span>
@@ -57,7 +64,7 @@
           <span>Google Sheets API</span>
           <span>Airtable</span>
           <span>Slack API</span>
-          <span>REST-Schnittstellen</span>
+          <span data-i18n="ticker.restApis">REST-Schnittstellen</span>
         </div>
         <div class="ticker-group" aria-hidden="true">
           <span>n8n</span>
@@ -68,137 +75,137 @@
           <span>Google Sheets API</span>
           <span>Airtable</span>
           <span>Slack API</span>
-          <span>REST-Schnittstellen</span>
+          <span data-i18n="ticker.restApis">REST-Schnittstellen</span>
         </div>
       </div>
     </div>
 
     <section id="services" class="services">
       <div class="container">
-        <h2 class="reveal">Leistungen</h2>
-        <p class="section-intro reveal">Vier Bereiche, in denen Automatisierung den größten Unterschied macht.</p>
+        <h2 class="reveal" data-i18n="services.heading">Leistungen</h2>
+        <p class="section-intro reveal" data-i18n="services.intro">Vier Bereiche, in denen Automatisierung den größten Unterschied macht.</p>
 
         <div class="showcase reveal">
-          <div class="tabs" role="tablist" aria-label="Leistungen">
-            <button class="tab active" role="tab" id="tab-automation" aria-selected="true" aria-controls="panel-automation">Prozessautomatisierung</button>
-            <button class="tab" role="tab" id="tab-ai" aria-selected="false" aria-controls="panel-ai" tabindex="-1">KI &amp; Chatbots</button>
-            <button class="tab" role="tab" id="tab-data" aria-selected="false" aria-controls="panel-data" tabindex="-1">Daten &amp; Reports</button>
-            <button class="tab" role="tab" id="tab-custom" aria-selected="false" aria-controls="panel-custom" tabindex="-1">Individuelle Integrationen</button>
+          <div class="tabs" role="tablist" aria-label="Leistungen" data-i18n-aria="services.heading">
+            <button class="tab active" role="tab" id="tab-automation" aria-selected="true" aria-controls="panel-automation" data-i18n="services.tabAutomation">Prozessautomatisierung</button>
+            <button class="tab" role="tab" id="tab-ai" aria-selected="false" aria-controls="panel-ai" tabindex="-1" data-i18n="services.tabAi">KI &amp; Chatbots</button>
+            <button class="tab" role="tab" id="tab-data" aria-selected="false" aria-controls="panel-data" tabindex="-1" data-i18n="services.tabData">Daten &amp; Reports</button>
+            <button class="tab" role="tab" id="tab-custom" aria-selected="false" aria-controls="panel-custom" tabindex="-1" data-i18n="services.tabCustom">Individuelle Integrationen</button>
           </div>
 
           <div class="showcase-panel">
             <div class="tabpanel" role="tabpanel" id="panel-automation" aria-labelledby="tab-automation">
               <div class="showcase-text">
-                <p>Wiederkehrende Abläufe mit n8n oder Zapier verbinden und automatisieren.</p>
+                <p data-i18n="services.automation.desc">Wiederkehrende Abläufe mit n8n oder Zapier verbinden und automatisieren.</p>
                 <ul class="checklist">
-                  <li>Wiederkehrende Aufgaben ohne manuellen Aufwand erledigen</li>
-                  <li>Systeme wie E-Mail, CRM und Tabellen automatisch verbinden</li>
-                  <li>Fehler durch manuelle Dateneingabe vermeiden</li>
-                  <li>Benachrichtigungen und Freigaben automatisch auslösen</li>
+                  <li data-i18n="services.automation.check1">Wiederkehrende Aufgaben ohne manuellen Aufwand erledigen</li>
+                  <li data-i18n="services.automation.check2">Systeme wie E-Mail, CRM und Tabellen automatisch verbinden</li>
+                  <li data-i18n="services.automation.check3">Fehler durch manuelle Dateneingabe vermeiden</li>
+                  <li data-i18n="services.automation.check4">Benachrichtigungen und Freigaben automatisch auslösen</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary">Kostenloses Erstgespräch</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="common.ctaPrimary">Kostenloses Erstgespräch</a>
               </div>
               <div class="showcase-visual">
                 <div class="workflow-card">
                   <div class="workflow-card-icon" aria-hidden="true">⚙️</div>
                   <div>
-                    <p class="workflow-card-title">Rechnungs-Workflow</p>
-                    <p class="workflow-card-meta">Ausgelöst durch: neue E-Mail</p>
+                    <p class="workflow-card-title" data-i18n="services.automation.workflowTitle">Rechnungs-Workflow</p>
+                    <p class="workflow-card-meta" data-i18n="services.automation.workflowMeta">Ausgelöst durch: neue E-Mail</p>
                   </div>
-                  <span class="workflow-status">Aktiv</span>
+                  <span class="workflow-status" data-i18n="common.statusActive">Aktiv</span>
                 </div>
                 <ol class="stepper">
-                  <li class="step active"><span class="step-dot"></span>Trigger erkannt</li>
-                  <li class="step"><span class="step-dot"></span>Daten werden verarbeitet</li>
-                  <li class="step"><span class="step-dot"></span>Aktion wird ausgeführt</li>
-                  <li class="step"><span class="step-dot"></span>Team wird benachrichtigt</li>
+                  <li class="step active"><span class="step-dot"></span><span data-i18n="services.automation.step1">Trigger erkannt</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.automation.step2">Daten werden verarbeitet</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.automation.step3">Aktion wird ausgeführt</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.automation.step4">Team wird benachrichtigt</span></li>
                 </ol>
               </div>
             </div>
 
             <div class="tabpanel" role="tabpanel" id="panel-ai" aria-labelledby="tab-ai" hidden>
               <div class="showcase-text">
-                <p>KI-gestützte Assistenten für Kundenservice oder interne Nutzung.</p>
+                <p data-i18n="services.ai.desc">KI-gestützte Assistenten für Kundenservice oder interne Nutzung.</p>
                 <ul class="checklist">
-                  <li>Kundenanfragen automatisch und rund um die Uhr beantworten</li>
-                  <li>Häufige Fragen sofort lösen, komplexe Fälle weiterleiten</li>
-                  <li>KI an Ihre eigenen Daten und Tools anbinden</li>
-                  <li>Nahtlose Übergabe an Ihr Team, wenn nötig</li>
+                  <li data-i18n="services.ai.check1">Kundenanfragen automatisch und rund um die Uhr beantworten</li>
+                  <li data-i18n="services.ai.check2">Häufige Fragen sofort lösen, komplexe Fälle weiterleiten</li>
+                  <li data-i18n="services.ai.check3">KI an Ihre eigenen Daten und Tools anbinden</li>
+                  <li data-i18n="services.ai.check4">Nahtlose Übergabe an Ihr Team, wenn nötig</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary">Kostenloses Erstgespräch</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="common.ctaPrimary">Kostenloses Erstgespräch</a>
               </div>
               <div class="showcase-visual">
                 <div class="workflow-card">
                   <div class="workflow-card-icon" aria-hidden="true">🤖</div>
                   <div>
-                    <p class="workflow-card-title">Support-Assistent</p>
-                    <p class="workflow-card-meta">Kanal: Website-Chat</p>
+                    <p class="workflow-card-title" data-i18n="services.ai.workflowTitle">Support-Assistent</p>
+                    <p class="workflow-card-meta" data-i18n="services.ai.workflowMeta">Kanal: Website-Chat</p>
                   </div>
-                  <span class="workflow-status">Aktiv</span>
+                  <span class="workflow-status" data-i18n="common.statusActive">Aktiv</span>
                 </div>
                 <ol class="stepper">
-                  <li class="step active"><span class="step-dot"></span>Anfrage eingegangen</li>
-                  <li class="step"><span class="step-dot"></span>KI analysiert Anliegen</li>
-                  <li class="step"><span class="step-dot"></span>Antwort wird generiert</li>
-                  <li class="step"><span class="step-dot"></span>Bei Bedarf an Team übergeben</li>
+                  <li class="step active"><span class="step-dot"></span><span data-i18n="services.ai.step1">Anfrage eingegangen</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.ai.step2">KI analysiert Anliegen</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.ai.step3">Antwort wird generiert</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.ai.step4">Bei Bedarf an Team übergeben</span></li>
                 </ol>
               </div>
             </div>
 
             <div class="tabpanel" role="tabpanel" id="panel-data" aria-labelledby="tab-data" hidden>
               <div class="showcase-text">
-                <p>Automatisch aktualisierte Reports und Dashboards statt manueller Excel-Arbeit.</p>
+                <p data-i18n="services.data.desc">Automatisch aktualisierte Reports und Dashboards statt manueller Excel-Arbeit.</p>
                 <ul class="checklist">
-                  <li>Kennzahlen aus mehreren Quellen automatisch zusammenführen</li>
-                  <li>Reports pünktlich und ohne manuelle Excel-Arbeit erstellen</li>
-                  <li>Dashboards immer aktuell halten</li>
-                  <li>Zeit für Analyse statt Datensammlung gewinnen</li>
+                  <li data-i18n="services.data.check1">Kennzahlen aus mehreren Quellen automatisch zusammenführen</li>
+                  <li data-i18n="services.data.check2">Reports pünktlich und ohne manuelle Excel-Arbeit erstellen</li>
+                  <li data-i18n="services.data.check3">Dashboards immer aktuell halten</li>
+                  <li data-i18n="services.data.check4">Zeit für Analyse statt Datensammlung gewinnen</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary">Kostenloses Erstgespräch</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="common.ctaPrimary">Kostenloses Erstgespräch</a>
               </div>
               <div class="showcase-visual">
                 <div class="workflow-card">
                   <div class="workflow-card-icon" aria-hidden="true">📊</div>
                   <div>
-                    <p class="workflow-card-title">Wochenreport</p>
-                    <p class="workflow-card-meta">Quellen: 3 Systeme</p>
+                    <p class="workflow-card-title" data-i18n="services.data.workflowTitle">Wochenreport</p>
+                    <p class="workflow-card-meta" data-i18n="services.data.workflowMeta">Quellen: 3 Systeme</p>
                   </div>
-                  <span class="workflow-status">Aktiv</span>
+                  <span class="workflow-status" data-i18n="common.statusActive">Aktiv</span>
                 </div>
                 <ol class="stepper">
-                  <li class="step active"><span class="step-dot"></span>Daten werden abgerufen</li>
-                  <li class="step"><span class="step-dot"></span>Werte werden zusammengeführt</li>
-                  <li class="step"><span class="step-dot"></span>Report wird erstellt</li>
-                  <li class="step"><span class="step-dot"></span>Report wird versendet</li>
+                  <li class="step active"><span class="step-dot"></span><span data-i18n="services.data.step1">Daten werden abgerufen</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.data.step2">Werte werden zusammengeführt</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.data.step3">Report wird erstellt</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.data.step4">Report wird versendet</span></li>
                 </ol>
               </div>
             </div>
 
             <div class="tabpanel" role="tabpanel" id="panel-custom" aria-labelledby="tab-custom" hidden>
               <div class="showcase-text">
-                <p>Maßgeschneiderte Schnittstellen, wenn Standardlösungen nicht ausreichen.</p>
+                <p data-i18n="services.custom.desc">Maßgeschneiderte Schnittstellen, wenn Standardlösungen nicht ausreichen.</p>
                 <ul class="checklist">
-                  <li>Maßgeschneiderte Schnittstellen zwischen Ihren Systemen</li>
-                  <li>Anbindung über APIs an bestehende Software</li>
-                  <li>Lösungen, die zu Ihren bestehenden Abläufen passen</li>
-                  <li>Skalierbar für wachsende Anforderungen</li>
+                  <li data-i18n="services.custom.check1">Maßgeschneiderte Schnittstellen zwischen Ihren Systemen</li>
+                  <li data-i18n="services.custom.check2">Anbindung über APIs an bestehende Software</li>
+                  <li data-i18n="services.custom.check3">Lösungen, die zu Ihren bestehenden Abläufen passen</li>
+                  <li data-i18n="services.custom.check4">Skalierbar für wachsende Anforderungen</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary">Kostenloses Erstgespräch</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="common.ctaPrimary">Kostenloses Erstgespräch</a>
               </div>
               <div class="showcase-visual">
                 <div class="workflow-card">
                   <div class="workflow-card-icon" aria-hidden="true">🔗</div>
                   <div>
-                    <p class="workflow-card-title">Individuelle Integration</p>
-                    <p class="workflow-card-meta">Verbindung: 2 Systeme</p>
+                    <p class="workflow-card-title" data-i18n="services.custom.workflowTitle">Individuelle Integration</p>
+                    <p class="workflow-card-meta" data-i18n="services.custom.workflowMeta">Verbindung: 2 Systeme</p>
                   </div>
-                  <span class="workflow-status">Aktiv</span>
+                  <span class="workflow-status" data-i18n="common.statusActive">Aktiv</span>
                 </div>
                 <ol class="stepper">
-                  <li class="step active"><span class="step-dot"></span>Anforderung analysiert</li>
-                  <li class="step"><span class="step-dot"></span>Schnittstelle entwickelt</li>
-                  <li class="step"><span class="step-dot"></span>Systeme verbunden</li>
-                  <li class="step"><span class="step-dot"></span>Getestet &amp; live</li>
+                  <li class="step active"><span class="step-dot"></span><span data-i18n="services.custom.step1">Anforderung analysiert</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.custom.step2">Schnittstelle entwickelt</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.custom.step3">Systeme verbunden</span></li>
+                  <li class="step"><span class="step-dot"></span><span data-i18n="services.custom.step4">Getestet &amp; live</span></li>
                 </ol>
               </div>
             </div>
@@ -209,8 +216,8 @@
 
     <section id="about" class="about">
       <div class="container about-inner">
-        <h2 class="reveal">Über mich</h2>
-        <p class="reveal">
+        <h2 class="reveal" data-i18n="about.heading">Über mich</h2>
+        <p class="reveal" data-i18n="about.text">
           Ich bin Mustafa Bozdogan und unterstütze Unternehmen dabei, Prozesse zu
           automatisieren und KI dort einzusetzen, wo sie echten Mehrwert schafft.
           Mein Fokus liegt auf pragmatischen Lösungen, die sich in bestehende
@@ -222,26 +229,26 @@
 
     <section id="references" class="references">
       <div class="container">
-        <h2 class="reveal">Beispielprojekte</h2>
-        <p class="section-intro reveal">
+        <h2 class="reveal" data-i18n="references.heading">Beispielprojekte</h2>
+        <p class="section-intro reveal" data-i18n="references.intro">
           Anonymisierte Beispiele typischer Projekte — zur Veranschaulichung, nicht als
           Referenz konkreter Kunden.
         </p>
         <div class="card-grid">
           <article class="card reveal">
-            <span class="card-tag">Beispiel</span>
-            <h3>Automatisierte Rechnungsverarbeitung</h3>
-            <p>Eingehende Rechnungen werden automatisch erfasst, geprüft und ins Buchhaltungssystem übertragen.</p>
+            <span class="card-tag" data-i18n="references.tag">Beispiel</span>
+            <h3 data-i18n="references.card1.title">Automatisierte Rechnungsverarbeitung</h3>
+            <p data-i18n="references.card1.desc">Eingehende Rechnungen werden automatisch erfasst, geprüft und ins Buchhaltungssystem übertragen.</p>
           </article>
           <article class="card reveal">
-            <span class="card-tag">Beispiel</span>
-            <h3>KI-Support-Assistent</h3>
-            <p>Ein Chatbot beantwortet häufige Kundenanfragen automatisch und leitet komplexe Fälle gezielt weiter.</p>
+            <span class="card-tag" data-i18n="references.tag">Beispiel</span>
+            <h3 data-i18n="references.card2.title">KI-Support-Assistent</h3>
+            <p data-i18n="references.card2.desc">Ein Chatbot beantwortet häufige Kundenanfragen automatisch und leitet komplexe Fälle gezielt weiter.</p>
           </article>
           <article class="card reveal">
-            <span class="card-tag">Beispiel</span>
-            <h3>Automatisiertes Wochenreporting</h3>
-            <p>Kennzahlen aus mehreren Quellen werden automatisch zusammengeführt und als Report versendet.</p>
+            <span class="card-tag" data-i18n="references.tag">Beispiel</span>
+            <h3 data-i18n="references.card3.title">Automatisiertes Wochenreporting</h3>
+            <p data-i18n="references.card3.desc">Kennzahlen aus mehreren Quellen werden automatisch zusammengeführt und als Report versendet.</p>
           </article>
         </div>
       </div>
@@ -249,23 +256,23 @@
 
     <section id="contact" class="contact">
       <div class="container contact-inner">
-        <h2 class="reveal">Kontakt</h2>
-        <p class="section-intro reveal">Lassen Sie uns über Ihr Automatisierungspotenzial sprechen.</p>
+        <h2 class="reveal" data-i18n="contact.heading">Kontakt</h2>
+        <p class="section-intro reveal" data-i18n="contact.intro">Lassen Sie uns über Ihr Automatisierungspotenzial sprechen.</p>
         <form class="contact-form reveal" id="contactForm">
           <div class="form-row">
-            <label for="name">Name</label>
+            <label for="name" data-i18n="contact.labelName">Name</label>
             <input type="text" id="name" name="name" required autocomplete="name">
           </div>
           <div class="form-row">
-            <label for="email">E-Mail</label>
+            <label for="email" data-i18n="contact.labelEmail">E-Mail</label>
             <input type="email" id="email" name="email" required autocomplete="email">
           </div>
           <div class="form-row">
-            <label for="message">Nachricht</label>
+            <label for="message" data-i18n="contact.labelMessage">Nachricht</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Nachricht senden</button>
-          <p class="form-note">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
+          <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Nachricht senden</button>
+          <p class="form-note" data-i18n="contact.note">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
         </form>
       </div>
     </section>
@@ -275,12 +282,13 @@
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Mustafa Bozdogan</p>
       <nav class="footer-nav">
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
+        <a href="impressum.html" data-i18n="footer.impressum">Impressum</a>
+        <a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a>
       </nav>
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
