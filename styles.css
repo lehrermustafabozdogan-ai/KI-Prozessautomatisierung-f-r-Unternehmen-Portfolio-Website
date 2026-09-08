@@ -32,28 +32,32 @@ body {
   position: relative;
 }
 
-/* Site-wide ambient background: three blurred color blobs that slowly
-   drift and pulse behind all content. Fixed so it stays alive as you
-   scroll, not just in the hero. */
+/* Site-wide ambient background: three blurred color blobs that drift
+   independently behind all content. Fixed so it stays alive as you
+   scroll, not just in the hero. Each blob animates via its own
+   background-position entry so they don't move as one rigid group. */
 body::before {
   content: "";
   position: fixed;
-  inset: -10%;
+  inset: 0;
   z-index: -1;
-  background:
-    radial-gradient(38vw 38vw at 18% 22%, rgba(34, 211, 238, 0.22), transparent 65%),
-    radial-gradient(34vw 34vw at 82% 28%, rgba(52, 211, 153, 0.16), transparent 65%),
-    radial-gradient(40vw 40vw at 50% 85%, rgba(59, 130, 246, 0.16), transparent 65%);
-  filter: blur(40px);
-  animation: bg-drift 30s ease-in-out infinite alternate;
+  background-image:
+    radial-gradient(34vw 34vw, rgba(34, 211, 238, 0.3), transparent 65%),
+    radial-gradient(30vw 30vw, rgba(52, 211, 153, 0.22), transparent 65%),
+    radial-gradient(36vw 36vw, rgba(59, 130, 246, 0.22), transparent 65%);
+  background-repeat: no-repeat;
+  background-position: 18% 22%, 82% 28%, 50% 85%;
+  filter: blur(35px);
+  animation: bg-drift 20s ease-in-out infinite;
   pointer-events: none;
 }
 
 @keyframes bg-drift {
-  0% { transform: translate(0%, 0%) scale(1); }
-  33% { transform: translate(4%, -3%) scale(1.08); }
-  66% { transform: translate(-3%, 4%) scale(1.04); }
-  100% { transform: translate(3%, 2%) scale(1.1); }
+  0%   { background-position: 18% 22%, 82% 28%, 50% 85%; }
+  25%  { background-position: 38% 38%, 62% 55%, 70% 60%; }
+  50%  { background-position: 12% 55%, 88% 12%, 30% 92%; }
+  75%  { background-position: 32% 15%, 70% 42%, 58% 68%; }
+  100% { background-position: 18% 22%, 82% 28%, 50% 85%; }
 }
 
 .container {
