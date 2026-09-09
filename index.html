@@ -259,6 +259,9 @@
         <h2 class="reveal" data-i18n="contact.heading">Kontakt</h2>
         <p class="section-intro reveal" data-i18n="contact.intro">Lassen Sie uns über Ihr Automatisierungspotenzial sprechen.</p>
         <form class="contact-form reveal" id="contactForm">
+          <input type="hidden" name="access_key" value="WEB3FORMS_ACCESS_KEY_HIER_EINTRAGEN">
+          <input type="hidden" name="subject" value="Neue Kontaktanfrage über die Website">
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <label for="name" data-i18n="contact.labelName">Name</label>
             <input type="text" id="name" name="name" required autocomplete="name">
@@ -272,7 +275,7 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" data-i18n="contact.submit">Nachricht senden</button>
-          <p class="form-note" data-i18n="contact.note">Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.</p>
+          <p class="form-note" id="formStatus" data-i18n="contact.note">Ihre Nachricht wird direkt über dieses Formular verschickt.</p>
         </form>
       </div>
     </section>

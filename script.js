@@ -147,18 +147,58 @@ if (hero && window.matchMedia("(pointer: fine)").matches) {
   });
 }
 
-// Contact form -> mailto (kein Backend nötig)
+// Contact form -> Web3Forms (kein eigenes Backend nötig)
 const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
 
-contactForm.addEventListener("submit", (event) => {
+const formStatusMessages = {
+  sending: {
+    de: "Nachricht wird gesendet …",
+    en: "Sending message …",
+    tr: "Mesaj gönderiliyor …",
+  },
+  success: {
+    de: "Danke! Ihre Nachricht wurde erfolgreich versendet.",
+    en: "Thank you! Your message has been sent successfully.",
+    tr: "Teşekkürler! Mesajınız başarıyla gönderildi.",
+  },
+  error: {
+    de: "Da ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie direkt eine E-Mail.",
+    en: "Something went wrong. Please try again or email us directly.",
+    tr: "Bir şeyler ters gitti. Lütfen tekrar deneyin veya doğrudan e-posta gönderin.",
+  },
+};
+
+function setFormStatus(state) {
+  const lang = document.documentElement.lang || "de";
+  formStatus.textContent = formStatusMessages[state][lang] || formStatusMessages[state].de;
+  delete formStatus.dataset.i18n;
+}
+
+contactForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const name = contactForm.name.value.trim();
-  const email = contactForm.email.value.trim();
-  const message = contactForm.message.value.trim();
+  const submitButton = contactForm.querySelector("button[type='submit']");
+  submitButton.disabled = true;
+  setFormStatus("sending");
 
-  const subject = encodeURIComponent(`Anfrage von ${name}`);
-  const body = encodeURIComponent(`${message}\n\n---\nName: ${name}\nE-Mail: ${email}`);
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: new FormData(contactForm),
+    });
+    const result = await response.json();
 
-  window.location.href = `mailto:mbozdogan.de@gmail.com?subject=${subject}&body=${body}`;
+    if (result.success) {
+      setFormStatus("success");
+      contactForm.reset();
+    } else {
+      setFormStatus("error");
+    }
+  } catch (error) {
+    setFormStatus("error");
+  } finally {
+    submitButton.disabled = false;
+  }
 });

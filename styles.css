@@ -638,6 +638,10 @@ section {
   margin: 0;
 }
 
+.hidden-field {
+  display: none;
+}
+
 /* Scroll progress bar */
 
 .scroll-progress {

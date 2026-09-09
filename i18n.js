@@ -93,7 +93,7 @@ const translations = {
     "contact.labelEmail": "E-Mail",
     "contact.labelMessage": "Nachricht",
     "contact.submit": "Nachricht senden",
-    "contact.note": "Öffnet Ihr E-Mail-Programm mit vorausgefüllter Nachricht.",
+    "contact.note": "Ihre Nachricht wird direkt über dieses Formular verschickt.",
 
     "footer.impressum": "Impressum",
     "footer.datenschutz": "Datenschutz",
@@ -194,7 +194,7 @@ const translations = {
     "contact.labelEmail": "Email",
     "contact.labelMessage": "Message",
     "contact.submit": "Send Message",
-    "contact.note": "Opens your email program with a pre-filled message.",
+    "contact.note": "Your message is sent directly through this form.",
 
     "footer.impressum": "Legal Notice",
     "footer.datenschutz": "Privacy Policy",
@@ -295,7 +295,7 @@ const translations = {
     "contact.labelEmail": "E-posta",
     "contact.labelMessage": "Mesaj",
     "contact.submit": "Mesaj Gönder",
-    "contact.note": "E-posta programınızı önceden doldurulmuş bir mesajla açar.",
+    "contact.note": "Mesajınız doğrudan bu form üzerinden gönderilir.",
 
     "footer.impressum": "Yasal Bilgiler",
     "footer.datenschutz": "Gizlilik Politikası",
